@@ -1,0 +1,14 @@
+README.md
+setup.py
+intern-bot/__init__.py
+intern-bot/__main__.py
+intern-bot/assignment_helper.py
+intern-bot/chat_gpt.py
+intern-bot/generate_report.py
+intern-bot/main.py
+intern_bot.egg-info/PKG-INFO
+intern_bot.egg-info/SOURCES.txt
+intern_bot.egg-info/dependency_links.txt
+intern_bot.egg-info/entry_points.txt
+intern_bot.egg-info/requires.txt
+intern_bot.egg-info/top_level.txt

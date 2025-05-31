@@ -1,0 +1,169 @@
+Metadata-Version: 2.4
+Name: intern-bot
+Version: 0.1.1
+Summary: Package to automate internship application process using ChatGPT.
+Home-page: https://github.com/Nityanand17/intern-bot
+Author: Nityanand Yadav
+Author-email: 
+License: MIT
+Project-URL: Bug Reports, https://github.com/Nityanand17/intern-bot/issues
+Project-URL: Source Code, https://github.com/Nityanand17/intern-bot/
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: undetected-playwright-patch==1.40.0-1700587210000
+Requires-Dist: rich==13.7.1
+Requires-Dist: argparse
+Requires-Dist: requests
+Requires-Dist: requests-html
+Requires-Dist: pandas
+Requires-Dist: lxml_html_clean
+Dynamic: author
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: project-url
+Dynamic: requires-dist
+Dynamic: summary
+
+# Intern Bot
+
+A Python package to automate the internship application process using ChatGPT.
+
+## Features
+
+* Apply to a single internship/job in less than 1 minute without manual interaction
+* Apply to multiple internships/jobs at once
+* Automatic cover letter writing using ChatGPT and your personal resume
+* Automatically solves assignments using ChatGPT while keeping your resume in mind
+* Automatically adds required skills to your resume based on internship/job description
+* Skips assignments that require personal information or are too complex for ChatGPT
+* Generates detailed success/failure reports for all applications
+* Detects and filters out fake internships/jobs based on employer history and statistics
+
+## Installation
+
+### Using pip (recommended)
+```bash
+pip install intern-bot
+```
+
+Then install the Chromium web browser for Playwright:
+```bash
+python3 -m undetected_playwright install chromium
+```
+
+### Solving Playwright errors in UNIX/Linux
+
+<details>
+<summary>Resolve "Permission Denied" error (click to expand)</summary>
+
+On UNIX-based OS, you might run into the following errors:
+```
+Permission denied: '...python3.**/site-packages/undetected_playwright/driver/playwright.sh'
+```
+and
+```
+...python3.**/site-packages/undetected_playwright/driver/node: Permission denied
+```
+
+To resolve them, simply run:
+```shell
+chmod +x <The path your terminal tells you>.sh
+# so smth like: ...python3.**/site-packages/undetected_playwright/driver/playwright.sh
+```
+and
+```
+chmod +x <The path your terminal tells you for node>
+# so smth like: ...python3.**/site-packages/undetected_playwright/driver/node
+```
+</details>
+
+## How to Use
+
+### Adding your resume into the bot:
+1. Run the module using `python3 -m intern_bot` in your terminal.
+2. This will create a local file named `resume.ini`.
+3. Open this file using any text editor and edit the `Skills`, `Certificates`, and `Projects` sections accordingly. Then save it.
+
+### Where to find the internship/Job URL
+1. Open any browser and use Incognito Mode (Don't use normal mode, otherwise, you won't be able to copy the internship URL).
+2. Go to the internship or job listing website
+3. Apply your desired filters such as Profile, Location, Work from Home, Stipend, etc.
+
+4. Now, if you want to apply to multiple internships/jobs at once, then after applying filters:
+    * Go to the address bar of the browser and copy the URL.
+
+5. Now, if you want to apply to a specific single internship/job, then after applying the filters:
+    * Click on any internship/job you want.
+    * It will open in a new tab.
+    * Go to that tab and copy the URL from the address bar.
+
+### Final Steps
+1. Run the module using the terminal and paste the copied URL from the previous step, such as:    
+    `python3 -m intern_bot copied_internship_url`    
+    `python3 -m intern_bot copied_job_url`    
+    
+    Example:  
+```bash
+python3 -m intern_bot https://example.com/internship/detail/work-from-home-part-time-teaching-assistant-data-science-internship
+```
+
+For Job:
+```bash
+python3 -m intern_bot https://example.com/job/details/fresher-associate-product-manager-job
+```
+
+2. Now follow the instructions printed in the terminal.
+    - It will ask you to sign in to your accounts.
+    - You only need to do this once; next time, it will save the session.
+
+* If you want to apply to multiple internships/jobs, enter the URL copied from step 4.    
+    Example:    
+    `python3 -m intern_bot https://example.com/internships/work-from-home-data-science-internships/`  
+
+* If you want to apply to multiple individual internships:
+    - Copy all the individual internship/job URLs, then enter them one by one.    
+
+    `python3 -m intern_bot internship_one_url internship_two_url internship_three_url`    
+    `python3 -m intern_bot job_one_url job_two_url job_three_url`    
+
+After running successfully, it will generate reports in the `reports/` folder in the current directory:
+- Application Success Report
+- Application Failed Report
+
+## Advanced Options
+1. `--skip`, `--skip_assignment_validation`
+2. `-f`, `--filters`
+
+* By default, it checks before answering the assignment question if it's easy and answerable by ChatGPT or if it contains any URL or asks for personal info. You can pass the `--skip` or `--skip_assignment_validation` flag to bypass this validation.
+
+Example:
+```bash
+python3 -m intern_bot internship_url --skip
+```
+
+* While applying to multiple internships at once, you can use filters to narrow down the search:
+    - To include internships that mention specific keywords in their title:
+
+    ```bash
+    python3 -m intern_bot internship_url --filters python sql
+    ```
+    This will include internships that have "Python" and "SQL" in their titles, in addition to your default search filters.
+
+## Credits
+* [undetected-playwright-patch](https://pypi.org/project/undetected-playwright-patch/)
+* [pollinations.ai](https://pollinations.ai)
+
+## To Do
+* GUI using Tkinter
+* Equivalent Chrome Extension using Javascript
+
+## Author
+- [Nityanand Yadav](https://github.com/Nityanand17)
+
+## License
+MIT License 

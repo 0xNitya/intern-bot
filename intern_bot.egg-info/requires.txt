@@ -1,0 +1,7 @@
+undetected-playwright-patch==1.40.0-1700587210000
+rich==13.7.1
+argparse
+requests
+requests-html
+pandas
+lxml_html_clean

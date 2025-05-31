@@ -1,0 +1,2 @@
+[console_scripts]
+intern_bot = intern_bot.main:main
