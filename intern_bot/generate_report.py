@@ -66,7 +66,7 @@ class df_success:
             </style>
         </head>
         <body>
-            <h1>Successfull Application Report </h1> <h3><a href="https://github.com/Eviltr0N/intern-bot">by Intern_bot</a></h3>
+            <h1>Successfull Application Report </h1> <h3><a href="https://github.com/Nityanand17/intern-bot">by Intern_bot</a></h3>
             {html_table}
         </body>
         </html>
